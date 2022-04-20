@@ -1,0 +1,19 @@
+body {
+  height: 100vh;
+  background-image: url(./assets/images/pier.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+  overflow-y: hidden;
+}
+
+#root {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+/* 62053f07e16adba2d0d813ac */
