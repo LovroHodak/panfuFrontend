@@ -1,3 +1,61 @@
+1. INDEX.js
+-injected queryClient
+
+2. CONFIG.js
+-api_url
+
+3. APP.css
+-background image
+
+4. USEQUERY.js
+-get and post requsets
+-POST requests
+
+5. HOME.js
+-useRef is sent to About
+-useEffect -> onScroll function calculates where is About component and when it is heigh enough hides social links
+
+6. CONTACT.js
+-useQuery to get data from BE
+-gets prop from Home when to hide itself
+-if hide===true apply css hidden
+
+7. ABOUT.js
+-useQuery to get data from BE
+-forwardRef because it recieves ref
+
+8. SONGS.js
+-Carousel library
+-useQuery to get data from BE
+-whe song is selected with OnClick iframe replaces picture
+DIFFERENT USE OF LOADING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+- ?? [<div key="loading">loading</div>]}
+
+9. MEMBERSGALLERY.js
+-useQuery to get data from BE
+-filter gallery by category
+
+10. NAVV.js
+-useLocation to get pathname
+-id location.pathname doesnt match path, check if it has prop paths if true then let that be location.pathname
+
+11. ADMIN.js
+-useQuery for POST requests from BE
+-useMutation to sent data 
+-useRef and new FormData for type that is not text
+
+
+
+
+
+
+
+
+
+
+
+
+
 VPRASANJA
 
 INDEX.html

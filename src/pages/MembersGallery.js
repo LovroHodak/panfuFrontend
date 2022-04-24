@@ -9,33 +9,32 @@ import Contacts from "../components/Contacts";
 import { API_URL } from "../config";
 
 export default function MembersGallery() {
-    const query = useQuery(["photos"], getPhotos);
+  const query = useQuery(["photos"], getPhotos);
 
-    return (
-      <>
-        <GalleryContainer>
-          {query.isLoading && <div>LOADING...</div>}
-          {query.data
-            ?.filter((image) => image.category === "members")
-            .map((imag, i) => {
-              return (
-                <GalleryItem key={i}>
-                  <img
-                    src={`${API_URL}/api/images/${imag.image}`}
-                    alt={imag.category}
-                  />
-                </GalleryItem>
-              );
-            })}
-        </GalleryContainer>
-  
-        <FixedContact>
+  return (
+    <>
+      <GalleryContainer>
+        {query.isLoading && <div>LOADING...</div>}
+        {query.data
+          ?.filter((image) => image.category === "members")
+          .map((imag, i) => {
+            return (
+              <GalleryItem key={i}>
+                <img
+                  src={`${API_URL}/api/images/${imag.image}`}
+                  alt={imag.category}
+                />
+              </GalleryItem>
+            );
+          })}
+      </GalleryContainer>
+
+      <FixedContact>
         <Contacts />
       </FixedContact>
-      </>
-    )
+    </>
+  );
 }
-
 
 const GalleryContainer = styled.section`
   display: flex;

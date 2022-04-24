@@ -8,10 +8,10 @@ import { API_URL } from "../config";
 
 export default function Contacts({ hide }) {
   const query = useQuery(["socials"], getSocial);
-  console.log(query);
+  //console.log(query);
 
   return (
-    <ContactsIcons hideThemAll={hide} style={{ position: "sticky" }}>
+    <ContactsIcons hideThemAll={hide}>
       {query.isLoading && <div>LOADING...</div>}
       {query.data?.map((soc, i) => {
         return (
@@ -28,6 +28,7 @@ export default function Contacts({ hide }) {
 
 const ContactsIcons = styled.div`
   display: flex;
+  position: sticky;
   align-items: flex-end;
   justify-content: center;
   gap: 16px;

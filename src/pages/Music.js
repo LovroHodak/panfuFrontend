@@ -13,7 +13,7 @@ export default function Music() {
 
   const query = useQuery(["songs"], getSongs);
 
-  console.log(query);
+  //console.log(query);
 
   return (
     <>

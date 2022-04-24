@@ -7,7 +7,6 @@ export default function Navv() {
   const location = useLocation();
   console.log(location.pathname);
 
-  let paths = [];
 
   const navbarItems = [
     { name: "home", path: "/" },
