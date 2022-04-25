@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useMutation } from "react-query";
+import styled from "styled-components";
 
 import { newAbout, newSong, newSocial, newPhoto } from "../hooks/useQuery";
 
@@ -9,7 +10,6 @@ export default function Admin() {
   const aboutMutation = useMutation(() => newAbout({ text }), {
     onSuccess: () => setText(""),
   });
-
 
   const songFormRef = useRef();
 
@@ -67,38 +67,65 @@ export default function Admin() {
 
   console.log(text);
   return (
-    <div>
-      <h1>ADD ABOUT</h1>
-      <form onSubmit={addAbout}>
-        <textarea
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        ></textarea>
-        <button>Submit</button>
-      </form>
+    <AdminContainer>
+      <AddingDivs>
+        <h1>ADD ABOUT</h1>
+        <Forms onSubmit={addAbout}>
+          <textarea
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            style={{ width: "80%" }}
+            placeholder="write content here"
+          ></textarea>
+          <button>Submit</button>
+        </Forms>
+      </AddingDivs>
 
-      <h1>ADD SONG</h1>
-      <form ref={songFormRef} onSubmit={addSong}>
-        <input name="title" />
-        <input name="image" type="file" alt="image" />
-        <input name="videoUrl" />
-        <button>add song</button>
-      </form>
+      <AddingDivs>
+        <h1>ADD SONG</h1>
+        <Forms ref={songFormRef} onSubmit={addSong}>
+          <input name="image" type="file" alt="image" />
+          <input name="title" placeholder="song title" />
 
-      <h1>ADD SOCIAL</h1>
-      <form ref={socialFormRef} onSubmit={addSocial}>
-        <input name="name" />
-        <input name="image" type="file" alt="image" />
-        <input name="link" />
-        <button>add social</button>
-      </form>
+          <input name="videoUrl" placeholder="video url" />
+          <button>Add song</button>
+        </Forms>
+      </AddingDivs>
 
-      <h1>ADD PHOTO</h1>
-      <form ref={photoFormRef} onSubmit={addPhoto}>
-        <input name="image" type="file" alt="image" />
-        <input name="category" />
-        <button>add photo</button>
-      </form>
-    </div>
+      <AddingDivs>
+        <h1>ADD SOCIAL</h1>
+        <Forms ref={socialFormRef} onSubmit={addSocial}>
+          <input name="image" type="file" alt="image" />
+          <input name="name" placeholder="name of social" />
+
+          <input name="link" placeholder="link" />
+          <button>Add social</button>
+        </Forms>
+      </AddingDivs>
+
+      <AddingDivs>
+        <h1>ADD PHOTO</h1>
+        <Forms ref={photoFormRef} onSubmit={addPhoto}>
+          <input name="image" type="file" alt="image" />
+          <input name="category" placeholder="members || koncert" />
+          <button>Add photo</button>
+        </Forms>
+      </AddingDivs>
+    </AdminContainer>
   );
 }
+
+const AdminContainer = styled.div`
+  width: 80%;
+  margin: auto;
+`;
+
+const AddingDivs = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Forms = styled.form`
+display: flex;
+justify-content: space-between
+`

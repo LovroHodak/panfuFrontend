@@ -55,6 +55,9 @@ const GoToBox = styled.div`
   & > h1 {
     color: white;
   }
+  &:hover {
+      transform: scale(1.2);
+    }
 `;
 
 const FixedContact = styled.div`

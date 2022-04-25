@@ -41,9 +41,13 @@ const TouchEl = styled.div`
 
 const ContactTitle = styled.h2`
   margin-bottom: 0;
+  font-family: mono;
+  color: antiquewhite;
 `;
 
 const FixedContact = styled.div`
   position: fixed;
   bottom: 0;
 `;
+
+

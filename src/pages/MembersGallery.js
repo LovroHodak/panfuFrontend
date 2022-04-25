@@ -59,6 +59,9 @@ const GalleryItem = styled.section`
     height: 100%;
     width: 100%;
   }
+  &:hover {
+      transform: scale(1.5);
+    }
 `;
 
 const FixedContact = styled.div`
