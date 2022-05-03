@@ -1,3 +1,5 @@
+why is there a _redirects ?
+
 1. INDEX.js
 -injected queryClient
 

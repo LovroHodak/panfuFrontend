@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { useMutation } from "react-query";
 import styled from "styled-components";
 
-import { newAbout, newSong, newSocial, newPhoto } from "../hooks/useQuery";
+import { newAbout, newSong, newPhoto } from "../hooks/useQuery";
 
 export default function Admin() {
   const [text, setText] = useState("");
@@ -16,15 +16,6 @@ export default function Admin() {
   const songMutation = useMutation((songFormData) => newSong(songFormData), {
     onSuccess: () => songFormRef.current.reset(),
   });
-
-  const socialFormRef = useRef();
-
-  const socialMutation = useMutation(
-    (socialFormData) => newSocial(socialFormData),
-    {
-      onSuccess: () => socialFormRef.current.reset(),
-    }
-  );
 
   const photoFormRef = useRef();
 
@@ -49,14 +40,6 @@ export default function Admin() {
     console.log(e.target);
   }
 
-  function addSocial(e) {
-    e.preventDefault();
-    const socialFormData = new FormData(e.target);
-    socialMutation.mutate(socialFormData);
-    console.log(socialFormData);
-    console.log(e.target);
-  }
-
   function addPhoto(e) {
     e.preventDefault();
     const photoFormData = new FormData(e.target);
@@ -74,47 +57,48 @@ export default function Admin() {
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
-            style={{ width: "80%" }}
+            /* style={{ width: "80%" }} */
             placeholder="write content here"
           ></textarea>
-          <button>Submit</button>
+          <Inputs name="password" type="password" placeholder="geslo" />
+          <Buttons>Submit</Buttons>
         </Forms>
       </AddingDivs>
 
-      <AddingDivs>
-        <h1>ADD SONG</h1>
-        <Forms ref={songFormRef} onSubmit={addSong}>
-          <input name="image" type="file" alt="image" />
-          <input name="title" placeholder="song title" />
+      <TwoDivs>
+        <AddingDivs>
+          <h1>ADD SONG</h1>
+          <Forms ref={songFormRef} onSubmit={addSong}>
+            <Inputs name="image" type="file" alt="image" />
+            <Inputs name="title" placeholder="song title" />
 
-          <input name="videoUrl" placeholder="video url" />
-          <button>Add song</button>
-        </Forms>
-      </AddingDivs>
+            <Inputs name="videoUrl" placeholder="video url" />
+            <Inputs name="password" type="password" placeholder="geslo" />
+            <Buttons>Add song</Buttons>
+          </Forms>
+        </AddingDivs>
 
-      <AddingDivs>
-        <h1>ADD SOCIAL</h1>
-        <Forms ref={socialFormRef} onSubmit={addSocial}>
-          <input name="image" type="file" alt="image" />
-          <input name="name" placeholder="name of social" />
-
-          <input name="link" placeholder="link" />
-          <button>Add social</button>
-        </Forms>
-      </AddingDivs>
-
-      <AddingDivs>
-        <h1>ADD PHOTO</h1>
-        <Forms ref={photoFormRef} onSubmit={addPhoto}>
-          <input name="image" type="file" alt="image" />
-          <input name="category" placeholder="members || koncert" />
-          <button>Add photo</button>
-        </Forms>
-      </AddingDivs>
+        <AddingDivs>
+          <h1>ADD PHOTO</h1>
+          <Forms ref={photoFormRef} onSubmit={addPhoto}>
+            <Inputs name="image" type="file" alt="image" />
+            <Inputs name="category" placeholder="members || koncert" />
+            <Inputs name="password" type="password" placeholder="geslo" />
+            <Buttons>Add photo</Buttons>
+          </Forms>
+        </AddingDivs>
+      </TwoDivs>
     </AdminContainer>
   );
 }
-
+const TwoDivs = styled.div`
+display: flex;
+justify-content: space-between;
+margin-bottom: 50px;
+@media screen and (max-width: 725px) {
+      flex-direction: column;
+    }
+`
 const AdminContainer = styled.div`
   width: 80%;
   margin: auto;
@@ -126,6 +110,16 @@ const AddingDivs = styled.div`
 `;
 
 const Forms = styled.form`
-display: flex;
-justify-content: space-between
-`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const Inputs = styled.input`
+  margin: 10px 0px;
+  width: 250px;
+`;
+
+const Buttons = styled.button`
+  width: 258px;
+`;

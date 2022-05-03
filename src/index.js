@@ -4,6 +4,7 @@ import App from "./App";
 import "react-multi-carousel/lib/styles.css";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "react-query";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const queryClient = new QueryClient();
 

@@ -8,11 +8,11 @@ export default function GetInTouch() {
     <InTouch>
       <TouchEl>
         <ContactTitle>Phone:</ContactTitle>
-        <h3>00386-40-994-021</h3>
+        <ContactData href="tel:00386-40-994-021" >00386-40-994-021</ContactData>
       </TouchEl>
       <TouchEl>
         <ContactTitle>Email:</ContactTitle>
-        <h3>peter.djokic@gmail.com</h3>
+        <ContactData>peter.djokic@gmail.com</ContactData>
       </TouchEl>
       <FixedContact>
         <Contacts />
@@ -29,6 +29,8 @@ const InTouch = styled.section`
   width: calc(100% - 64px);
   margin: auto;
   max-width: 1000px;
+  font-size: xx-large;
+  
 `;
 
 const TouchEl = styled.div`
@@ -43,6 +45,9 @@ const ContactTitle = styled.h2`
   margin-bottom: 0;
   font-family: mono;
   color: antiquewhite;
+  @media screen and (max-width: 530px) {
+      font-size: 20px;
+    }
 `;
 
 const FixedContact = styled.div`
@@ -50,4 +55,14 @@ const FixedContact = styled.div`
   bottom: 0;
 `;
 
+const ContactData = styled.a`
+font-size: 30px;
+font-weight: bold;
+text-decoration: none;
+color: inherit;
+margin: 10px;
+@media screen and (max-width: 530px) {
+      font-size: 20px;
+    }
+`
 

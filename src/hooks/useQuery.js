@@ -1,31 +1,5 @@
 import { API_URL } from "../config";
 
-// SOCIAL
-export async function getSocial() {
-  const response = await fetch(`${API_URL}/api/social`);
-
-  const data = await response.json();
-  if (response.status >= 400) {
-    throw new Error(data.message, data);
-  }
-  return data;
-}
-
-export async function newSocial(socialData) {
-  const response = await fetch(`${API_URL}/api/addSocial`, {
-    method: "POST",
-    body: socialData,
-    /*  headers: {
-      'content-type': 'multipart/form-data'
-    }  */
-  });
-
-  const data = await response.json();
-  if (response.status >= 400) {
-    throw new Error(data.message, data);
-  }
-  return data;
-}
 
 // SONGS
 export async function getSongs() {

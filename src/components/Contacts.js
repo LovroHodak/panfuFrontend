@@ -1,27 +1,27 @@
 import React from "react";
-import { useQuery } from "react-query";
 import styled from "styled-components";
 
-import { getSocial } from "../hooks/useQuery";
-
-import { API_URL } from "../config";
 
 export default function Contacts({ hide }) {
-  const query = useQuery(["socials"], getSocial);
-  //console.log(query);
 
   return (
     <ContactsIcons hideThemAll={hide}>
-      {query.isLoading && <div>LOADING...</div>}
-      {query.data?.map((soc, i) => {
-        return (
-          <div key={i}>
-            <a href={soc.link} target="blank">
-              <img src={`${API_URL}/api/images/${soc.image}`} alt={soc.name} />
-            </a>
-          </div>
-        );
-      })}
+      <a
+        href="https://www.youtube.com/channel/UCSfhUZMG9eh7iL6_qkMNPsQ"
+        target="blank"
+      >
+        <i className="bi bi-youtube "></i>
+      </a>
+      <a href="https://www.facebook.com/PANFU.trio" target="blank">
+        <i className="bi bi-facebook "></i>
+      </a>
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=peter.djokic@gmail.com&su=PANFUwebPage"
+        target="blank"
+      >
+        <i className="bi bi-envelope "></i>
+      </a>
+
     </ContactsIcons>
   );
 }
@@ -37,9 +37,18 @@ const ContactsIcons = styled.div`
   height: 112px;
   // zato da gre lahko cez elemente
   z-index: 1;
-  & img {
-    width: 32px;
-    padding-bottom: 16px;
+  & a {
+    padding: 0px 8px 16px 8px;
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  & i {
+    cursor: pointer;
+    font-size: 40px;
   }
 
   ${(props) => props.hideThemAll && "visibility: hidden;"}
