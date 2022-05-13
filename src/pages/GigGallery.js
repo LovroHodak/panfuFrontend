@@ -59,7 +59,8 @@ const GalleryItem = styled.section`
   overflow: hidden;
   margin: 10px;
   transition: transform 0.3s ease-in;
-  box-shadow: 10px 10px 5px #ccc;
+  //box-shadow: 10px 10px 5px #ccc;
+  filter: drop-shadow(10px 10px 5px #ccc);
   & > img {
     box-sizing: border-box;
     border: 2px solid red;

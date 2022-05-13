@@ -29,7 +29,6 @@ const responsive = {
 export default function Songs() {
   const query = useQuery(["songs"], getSongs);
 
-  //console.log(query);
 
   const [selectedSong, setSelectedSong] = useState();
 

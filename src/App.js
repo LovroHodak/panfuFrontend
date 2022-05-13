@@ -3,13 +3,13 @@ import { Switch, Route, withRouter } from "react-router-dom";
 
 import "./App.css";
 
+import Navv from "./components/Navv";
+
 import Home from "./pages/Home";
 import Music from "./pages/Music";
 import Gallery from "./pages/Gallery";
 import GetInTouch from "./pages/GetInTouch";
 import Admin from "./pages/Admin";
-
-import Navv from "./components/Navv";
 import GigGallery from "./pages/GigGallery";
 import MembersGallery from "./pages/MembersGallery";
 

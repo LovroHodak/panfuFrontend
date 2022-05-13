@@ -36,19 +36,19 @@ export default function Admin() {
     const songFormData = new FormData(e.target);
     songMutation.mutate(songFormData);
 
-    console.log(songFormData);
-    console.log(e.target);
+    //console.log(songFormData);
+    //console.log(e.target);
   }
 
   function addPhoto(e) {
     e.preventDefault();
     const photoFormData = new FormData(e.target);
     photoMutation.mutate(photoFormData);
-    console.log(photoFormData);
-    console.log(e.target);
+    //console.log(photoFormData);
+    //console.log(e.target);
   }
 
-  console.log(text);
+  //console.log(text);
   return (
     <AdminContainer>
       <AddingDivs>
@@ -57,7 +57,6 @@ export default function Admin() {
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
-            /* style={{ width: "80%" }} */
             placeholder="write content here"
           ></textarea>
           <Inputs name="password" type="password" placeholder="geslo" />
@@ -101,6 +100,7 @@ margin-bottom: 50px;
 `
 const AdminContainer = styled.div`
   width: 80%;
+  max-width: 800px;
   margin: auto;
 `;
 

@@ -46,9 +46,10 @@ const GoToBox = styled.div`
   align-items: center;
   width: 260px;
   height: 260px;
-  border: 2px solid green;
+  border: 2px solid white;
   border-radius: 7px;
-  box-shadow: 5px 10px;
+  filter: drop-shadow(10px 10px 5px #ccc);
+  transition: transform 0.3s ease-in;
   margin: 10px;
   margin-bottom: 80px;
   background-color: black;

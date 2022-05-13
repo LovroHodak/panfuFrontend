@@ -19,10 +19,6 @@ export default function Home() {
       } else {
         setHideContactsState(false);
       }
-
-      /* console.log(height);
-      console.log(aboutRef.current.offsetTop);
-      console.log(hideContactsState); */
     };
 
     document.getElementById("root").addEventListener("scroll", onScroll);

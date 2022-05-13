@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function Navv() {
   //tell me on which page i am at
   const location = useLocation();
-  console.log(location.pathname);
+  //console.log(location.pathname);
 
 
   const navbarItems = [

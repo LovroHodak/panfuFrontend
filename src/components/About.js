@@ -7,7 +7,6 @@ import { getAbout } from "../hooks/useQuery";
 export default forwardRef(function About(props, reference) {
   const query = useQuery(["abouts"], getAbout);
 
-  //console.log(query);
 
   return (
     <AboutPanfu ref={reference}>
