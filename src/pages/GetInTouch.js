@@ -33,7 +33,7 @@ const OuterBox = styled.div`
     text-decoration: none;
   }
   @media screen and (max-width: 464px) {
-    margin-bottom: 200px;
+    margin-bottom: 300px;
   }
 `;
 
